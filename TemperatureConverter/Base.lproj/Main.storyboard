@@ -1,25 +1,141 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="TemperatureConverter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                        <viewControllerLayoutGuide type="top" id="jPs-jL-hzP"/>
+                        <viewControllerLayoutGuide type="bottom" id="I5O-ru-HO2"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30℃" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BAP-DQ-SnN">
+                                <rect key="frame" x="16" y="137" width="179" height="21"/>
+                                <color key="backgroundColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="86°F" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qO2-ex-8OB">
+                                <rect key="frame" x="211" y="137" width="178" height="21"/>
+                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="303.15K" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ktK-YW-8t3">
+                                <rect key="frame" x="405" y="137" width="179" height="21"/>
+                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature Converter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7S4-GM-0n7">
+                                <rect key="frame" x="16" y="36" width="568" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="500" id="HeJ-v7-CKO">
+                                        <variation key="widthClass=regular" constant="768"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="HeJ-v7-CKO"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="HeJ-v7-CKO"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="30" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Dde-Ul-9n9">
+                                <rect key="frame" x="14" y="238" width="572" height="31"/>
+                                <variation key="heightClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="14" y="269" width="292" height="31"/>
+                                </variation>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="14" y="225" width="292" height="31"/>
+                                </variation>
+                                <connections>
+                                    <action selector="temperatureSliderChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="cIQ-VZ-3x1"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ice" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dtn-kT-EPn">
+                                <rect key="frame" x="21" y="276" width="23" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="263" width="23" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="stream" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ae1-By-pHp">
+                                <rect key="frame" x="531" y="276" width="53" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="251" y="263" width="53" height="21"/>
+                                </variation>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qO2-ex-8OB" firstAttribute="leading" secondItem="BAP-DQ-SnN" secondAttribute="trailing" constant="16" id="00H-Nb-oss"/>
+                            <constraint firstItem="dtn-kT-EPn" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="5" id="3rA-op-5bE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7S4-GM-0n7" secondAttribute="trailing" priority="999" id="6Fv-ko-7Vr"/>
+                            <constraint firstItem="7S4-GM-0n7" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" priority="999" id="9In-8Q-EZt"/>
+                            <constraint firstItem="dtn-kT-EPn" firstAttribute="top" secondItem="Dde-Ul-9n9" secondAttribute="bottom" constant="8" id="GLs-M6-kma"/>
+                            <constraint firstItem="BAP-DQ-SnN" firstAttribute="width" secondItem="ktK-YW-8t3" secondAttribute="width" id="H84-vR-jAt"/>
+                            <constraint firstItem="ktK-YW-8t3" firstAttribute="leading" secondItem="qO2-ex-8OB" secondAttribute="trailing" constant="16" id="ILU-Jb-2YU"/>
+                            <constraint firstItem="BAP-DQ-SnN" firstAttribute="top" secondItem="7S4-GM-0n7" secondAttribute="bottom" constant="80" id="ItY-OJ-agw"/>
+                            <constraint firstItem="Dde-Ul-9n9" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="MXX-LB-d38"/>
+                            <constraint firstItem="qO2-ex-8OB" firstAttribute="top" secondItem="7S4-GM-0n7" secondAttribute="bottom" constant="80" id="NJS-Uf-sbv"/>
+                            <constraint firstItem="Dde-Ul-9n9" firstAttribute="top" secondItem="qO2-ex-8OB" secondAttribute="bottom" constant="80" id="Na5-87-kgV"/>
+                            <constraint firstAttribute="centerX" secondItem="7S4-GM-0n7" secondAttribute="centerX" id="RpY-if-6LB"/>
+                            <constraint firstItem="BAP-DQ-SnN" firstAttribute="width" secondItem="qO2-ex-8OB" secondAttribute="width" id="UCS-I5-aSx"/>
+                            <constraint firstItem="ktK-YW-8t3" firstAttribute="top" secondItem="7S4-GM-0n7" secondAttribute="bottom" constant="80" id="W6l-2E-nzr"/>
+                            <constraint firstItem="7S4-GM-0n7" firstAttribute="top" secondItem="jPs-jL-hzP" secondAttribute="bottom" constant="16" id="bPh-t2-VFM"/>
+                            <constraint firstAttribute="trailing" secondItem="ktK-YW-8t3" secondAttribute="trailing" constant="16" id="bjA-X5-ijy"/>
+                            <constraint firstItem="BAP-DQ-SnN" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="lG2-Re-c3a"/>
+                            <constraint firstItem="dtn-kT-EPn" firstAttribute="baseline" secondItem="ae1-By-pHp" secondAttribute="baseline" id="tFO-eq-FCD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Dde-Ul-9n9" secondAttribute="trailing" id="vC3-qw-XzI"/>
+                            <constraint firstItem="ae1-By-pHp" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="xWy-B2-2tB"/>
+                            <constraint firstItem="ae1-By-pHp" firstAttribute="top" secondItem="Dde-Ul-9n9" secondAttribute="bottom" constant="8" id="ycb-xj-PnO"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="RpY-if-6LB"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="RpY-if-6LB"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="celsiusLabel" destination="BAP-DQ-SnN" id="iP8-yC-Dzn"/>
+                        <outlet property="fahrenheitLabel" destination="qO2-ex-8OB" id="heG-LQ-7nY"/>
+                        <outlet property="kelvinLabel" destination="ktK-YW-8t3" id="NB4-LN-nPo"/>
+                        <outlet property="temperatureSlider" destination="Dde-Ul-9n9" id="p80-jo-30C"/>
+                        <outlet property="titleLabel" destination="7S4-GM-0n7" id="BYS-6x-tCS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="303" y="388"/>
         </scene>
     </scenes>
 </document>
